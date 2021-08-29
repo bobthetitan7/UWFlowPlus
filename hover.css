@@ -1,0 +1,79 @@
+#frame {
+	position:absolute;
+	pointer-events:auto;
+	background-color : white;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 10pt;
+	color:#444444;
+	border-style:solid;
+	border-width:2px;
+	border-color:rgb(0, 82, 204);
+}
+
+.loading {
+	background-size: 40px 40px;
+	background-color : white;
+	border-radius:50%;
+	width:40px;
+	height:40px;
+}
+
+.loading > * {
+	display:none;
+}
+
+.info {
+	border-radius:2%;
+	background-image:none;
+	width:280px;
+	padding:5px;
+}
+.info > *{
+	display:inline-block;
+    text-indent: 0pt;
+    padding-left: 3pt;
+}
+
+#frame h1{
+	font-weight:bold;
+}
+
+.rating{
+	width:100%;
+}
+
+.rating .bar{
+	top:0px;
+	left:50px;
+	opacity:0.7;
+	border-radius:0px 4px 4px 0px;
+	width:115px;
+	height:8px;
+}
+
+.bar .linear{
+	position: relative;
+    top: 10px;
+}
+
+#liked_circle{
+    position: relative;
+    width: 80px; 
+    height: 80px;
+}
+
+#liked{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size:12pt;
+}
+
+#liked_identifier {
+    position: absolute;
+    top: calc(50% + 18px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:8pt;
+}

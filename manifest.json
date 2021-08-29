@@ -1,0 +1,25 @@
+{
+    "name": "UWFlow++ (2021)",
+    "description": "Nifty extension to quickly preview UWFlow rating of a course by hovering over course listing",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "web_accessible_resources": [{
+        "resources": ["/html/hover.html"],
+        "matches": ["http://ugradcalendar.uwaterloo.ca/*","https://ugradcalendar.uwaterloo.ca/*"]
+    }],
+    "content_scripts": [
+        {
+          "matches": ["http://ugradcalendar.uwaterloo.ca/*","https://ugradcalendar.uwaterloo.ca/*"],
+          "css": ["hover.css"],
+          "js": ["/third_party/jquery.js", "content-script.js", "/third_party/progressbar.js"],
+          "all_frames": true
+        }
+    ],
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    }
+}
