@@ -4,14 +4,6 @@ var like_circle
 var useful_bar
 var easy_bar
 
-// const hover_container = document.createElement('div');
-// // const hover_content = document.createElement('input')
-
-// // hover_container.appendChild(hover_content)
-// hover_container.innerHTML = '<object type="text/html" data="./hover.html" ></object>'
-
-// document.querySelector('body').appendChild(hover_container)
-
 $( () => {
     $('body').after("<div id='frame' class='loading'></div>");
     $('#frame').load(chrome.runtime.getURL("/html/hover.html"));
@@ -109,16 +101,9 @@ document.addEventListener('mouseover', (e) => {
                         like_circle.animate(courseData.rating.liked)
                 }
             });
-
-
         }
     }, delay);
 });
-
-// document.addEventListener('click', (e) => {
-//     clearTimeout(timer)
-//     $('#frame').css('display','none')
-// });
 
 document.addEventListener('mouseout', (e) => {
     clearTimeout(timer)
@@ -126,15 +111,8 @@ document.addEventListener('mouseout', (e) => {
     var divHeight = parseInt(window.getComputedStyle(document.getElementById('frame')).getPropertyValue('height'))
     var divX = parseInt(window.getComputedStyle(document.getElementById('frame')).getPropertyValue('left'))
     var divY = parseInt(window.getComputedStyle(document.getElementById('frame')).getPropertyValue('top'))
-    var output = [e.pageX, divX - 20, divX + divWidth + 20, e.pageY, divY - 20, divY + divHeight + 20]
-    // console.log(output)
     if(divX - 20 > e.pageX || e.pageX > divX + divWidth + 20
         || divY - 20 > e.pageY || e.pageY > divY + divHeight + 20) {
         $('#frame').css('display','none')
     }
 });
-
-// $("#frame").addEventListener('mouseout', () => {
-//     clearTimeout(timer)
-//     $('#frame').css('display','none')
-// });
